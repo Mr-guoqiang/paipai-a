@@ -18,7 +18,14 @@ public class App {
 		//========================================================================
 		UsernamePasswordToken token=new UsernamePasswordToken("andy","456");
 		
-		
+		try {
+			subject.login(token);
+		} catch (Exception e) {
+			System.out.println("认证失败：" + e);
+			return;
+		}
+		System.out.println("认证成功：" + subject.getPrincipal());
+		subject.checkPermission("user:save"); 
 		
 		
 		//========================================================================

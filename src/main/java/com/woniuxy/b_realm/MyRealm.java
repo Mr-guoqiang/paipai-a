@@ -30,7 +30,7 @@ public class MyRealm extends AuthorizingRealm{
 		System.out.println("进行授权"+pricapal);
 		SimpleAuthorizationInfo sai=new SimpleAuthorizationInfo();
 		
-		if(!"andy".equals(pricapal)) {
+		if("andy".equals(pricapal)) {
 			sai.addRole("admin");
 			sai.addRole("guest");
 			sai.addStringPermission("user:*");
